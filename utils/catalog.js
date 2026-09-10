@@ -1,0 +1,106 @@
+// Starting seed list. This is meant to be edited/expanded, not treated as final -
+// add or rename institutes here any time and both the API and the frontend
+// dropdowns pick it up automatically.
+
+const INSTITUTES = [
+  // IITs
+  { code: "IITB", name: "IIT Bombay", type: "IIT" },
+  { code: "IITD", name: "IIT Delhi", type: "IIT" },
+  { code: "IITK", name: "IIT Kanpur", type: "IIT" },
+  { code: "IITKGP", name: "IIT Kharagpur", type: "IIT" },
+  { code: "IITM", name: "IIT Madras", type: "IIT" },
+  { code: "IITR", name: "IIT Roorkee", type: "IIT" },
+  { code: "IITG", name: "IIT Guwahati", type: "IIT" },
+  { code: "IITH", name: "IIT Hyderabad", type: "IIT" },
+  { code: "IITI", name: "IIT Indore", type: "IIT" },
+  { code: "IITMANDI", name: "IIT Mandi", type: "IIT" },
+  { code: "IITP", name: "IIT Patna", type: "IIT" },
+  { code: "IITRPR", name: "IIT Ropar", type: "IIT" },
+  { code: "IITBHU", name: "IIT (BHU) Varanasi", type: "IIT" },
+  { code: "IITBBS", name: "IIT Bhubaneswar", type: "IIT" },
+  { code: "IITGN", name: "IIT Gandhinagar", type: "IIT" },
+  { code: "IITJ", name: "IIT Jodhpur", type: "IIT" },
+  { code: "IITPKD", name: "IIT Palakkad", type: "IIT" },
+  { code: "IITTP", name: "IIT Tirupati", type: "IIT" },
+  { code: "IITISM", name: "IIT (ISM) Dhanbad", type: "IIT" },
+  { code: "IITBH", name: "IIT Bhilai", type: "IIT" },
+  { code: "IITGOA", name: "IIT Goa", type: "IIT" },
+  { code: "IITJMU", name: "IIT Jammu", type: "IIT" },
+  { code: "IITDH", name: "IIT Dharwad", type: "IIT" },
+
+  // NITs
+  { code: "NITT", name: "NIT Tiruchirappalli", type: "NIT" },
+  { code: "NITW", name: "NIT Warangal", type: "NIT" },
+  { code: "NITK", name: "NIT Karnataka Surathkal", type: "NIT" },
+  { code: "NITR", name: "NIT Rourkela", type: "NIT" },
+  { code: "NITC", name: "NIT Calicut", type: "NIT" },
+  { code: "NITDGP", name: "NIT Durgapur", type: "NIT" },
+  { code: "NITKKR", name: "NIT Kurukshetra", type: "NIT" },
+  { code: "MNIT", name: "MNIT Jaipur", type: "NIT" },
+  { code: "MNNIT", name: "MNNIT Allahabad", type: "NIT" },
+  { code: "MANIT", name: "MANIT Bhopal", type: "NIT" },
+  { code: "VNIT", name: "VNIT Nagpur", type: "NIT" },
+  { code: "NITJ", name: "NIT Jalandhar", type: "NIT" },
+  { code: "NITJSR", name: "NIT Jamshedpur", type: "NIT" },
+  { code: "NITP", name: "NIT Patna", type: "NIT" },
+  { code: "NITRR", name: "NIT Raipur", type: "NIT" },
+  { code: "NITSRI", name: "NIT Srinagar", type: "NIT" },
+  { code: "NITH", name: "NIT Hamirpur", type: "NIT" },
+  { code: "NITS", name: "NIT Silchar", type: "NIT" },
+  { code: "NITA", name: "NIT Agartala", type: "NIT" },
+  { code: "NITAP", name: "NIT Arunachal Pradesh", type: "NIT" },
+  { code: "NITDELHI", name: "NIT Delhi", type: "NIT" },
+  { code: "NITGOA", name: "NIT Goa", type: "NIT" },
+  { code: "NITMN", name: "NIT Manipur", type: "NIT" },
+  { code: "NITM", name: "NIT Meghalaya", type: "NIT" },
+  { code: "NITMZ", name: "NIT Mizoram", type: "NIT" },
+  { code: "NITNGL", name: "NIT Nagaland", type: "NIT" },
+  { code: "NITPY", name: "NIT Puducherry", type: "NIT" },
+  { code: "NITSKM", name: "NIT Sikkim", type: "NIT" },
+  { code: "NITUK", name: "NIT Uttarakhand", type: "NIT" },
+  { code: "NITAP2", name: "NIT Andhra Pradesh", type: "NIT" },
+  { code: "SVNIT", name: "SVNIT Surat", type: "NIT" },
+
+  // IIITs
+  { code: "IIITH", name: "IIIT Hyderabad", type: "IIIT" },
+  { code: "IIITB", name: "IIIT Bangalore", type: "IIIT" },
+  { code: "IIITD", name: "IIIT Delhi", type: "IIIT" },
+  { code: "IIITA", name: "IIIT Allahabad", type: "IIIT" },
+  { code: "ABVIIITM", name: "ABV-IIITM Gwalior", type: "IIIT" },
+  { code: "IIITDMJ", name: "IIITDM Jabalpur", type: "IIIT" },
+  { code: "IIITDMK", name: "IIITDM Kancheepuram", type: "IIIT" },
+  { code: "IIITP", name: "IIIT Pune", type: "IIIT" },
+  { code: "IIITN", name: "IIIT Nagpur", type: "IIIT" },
+  { code: "IIITK", name: "IIIT Kota", type: "IIIT" },
+  { code: "IIITV", name: "IIIT Vadodara", type: "IIIT" },
+  { code: "IIITG", name: "IIIT Guwahati", type: "IIIT" },
+  { code: "IIITBH", name: "IIIT Bhopal", type: "IIIT" },
+  { code: "IIITKL", name: "IIIT Kalyani", type: "IIIT" },
+  { code: "IIITR", name: "IIIT Ranchi", type: "IIIT" },
+  { code: "IIITSC", name: "IIIT Sri City", type: "IIIT" },
+  { code: "IIITU", name: "IIIT Una", type: "IIIT" },
+  { code: "IIITS", name: "IIIT Sonepat", type: "IIIT" },
+  { code: "IIITL", name: "IIIT Lucknow", type: "IIIT" },
+  { code: "IIITKTM", name: "IIIT Kottayam", type: "IIIT" },
+];
+
+const BRANCHES = [
+  "Computer Science Engineering",
+  "Electronics & Communication Engineering",
+  "Electrical Engineering",
+  "Mechanical Engineering",
+  "Civil Engineering",
+  "Chemical Engineering",
+  "Metallurgical & Materials Engineering",
+  "Aerospace Engineering",
+  "Biotechnology",
+  "Mathematics & Computing",
+  "Engineering Physics",
+  "Industrial & Production Engineering",
+];
+
+const EXAM_TYPES = ["Mid Semester", "End Semester"];
+
+const SEMESTERS = [1, 2, 3, 4, 5, 6, 7, 8];
+
+module.exports = { INSTITUTES, BRANCHES, EXAM_TYPES, SEMESTERS };
