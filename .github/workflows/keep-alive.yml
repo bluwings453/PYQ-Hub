@@ -1,0 +1,18 @@
+name: Keep Render backend awake
+
+on:
+  schedule:
+    # Runs every 10 minutes. GitHub queues these, so actual timing can drift
+    # a couple of minutes under load - fine for this purpose.
+    - cron: "*/10 * * * *"
+  workflow_dispatch: {} # lets you trigger it manually from the Actions tab to test
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping health endpoint
+        run: |
+          curl -sf https://pyq-hub-4.onrender.com/api/health \
+            && echo "Backend responded - awake." \
+            || echo "No response yet (likely mid wake-up) - not a failure."
